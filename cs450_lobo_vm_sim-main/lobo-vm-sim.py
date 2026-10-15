@@ -239,16 +239,35 @@ for addr_index, vaddr in enumerate(addr_list):
             # 3. clear victim's PFN from its PTE
             # 4. preserve that PFN so the incoming page can reuse it
             # The policy module has already removed victim from its state.
-            pass        # TODO
+
+            # Should get PFN that has victim's VPN
+            pfn = frames.index(victim)
+
+            # marks victim as nonresident and clears the pfn
+            page_table[victim].present = False
+            page_table[victim].pfn = None
+
+            # clears the pfn in frames[] but NOT the actual pfn
+            frames[pfn] = None
+
+            
 
         # Student TODO 7: install vpn into pfn.
         # Update frames[pfn], page_table[vpn].present, and page_table[vpn].pfn.
         # The policy module has already added vpn to its resident-page state.
-        pass            # TODO
+
+        # using vpn, we update the pfn in frames
+        frames[pfn] = vpn
+
+        # Then in it's page table we set it as resident and it's appropriate pfn
+        page_table[vpn].present = True
+        page_table[vpn].pfn = pfn
+
+       
 
     # Student TODO 8: complete the physical-address translation.
-    pfn = None          # TODO
-    paddr = None        # TODO
+    pfn = page_table[vpn].pfn
+    paddr = make_physical_address(pfn, offset, pagebits)        # TODO
 
     if not options.notrace:
         print(
