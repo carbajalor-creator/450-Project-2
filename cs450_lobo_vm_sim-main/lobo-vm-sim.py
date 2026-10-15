@@ -52,8 +52,16 @@ def split_virtual_address(vaddr, pagebits, pagemask):
 
     HINT: OSTEP's paging-linear-translate.py contains analogous logic.
     """
-    vpn = None       # TODO
-    offset = None    # TODO
+
+    vpnmask = 0xFFFFFFFF & ~pagemask
+
+    "vpn = (vaddr & pagemask) >> pagebits"
+    "offset = vaddr & pagemask"
+
+    vpn = (vaddr & vpnmask) >> pagebits       # TODO
+    offset = vaddr & pagemask    # TODO
+
+
     return vpn, offset
 
 
@@ -61,7 +69,8 @@ def split_virtual_address(vaddr, pagebits, pagemask):
 
 def make_physical_address(pfn, offset, pagebits):
     """Construct a physical address from PFN and page offset."""
-    return None      # TODO
+    paddr = (pfn << pagebits) | offset
+    return paddr      # TODO
 
 
 # Student TODO 3
@@ -73,10 +82,10 @@ def find_free_frame(frames):
 
     Return a free PFN, or None if all frames are occupied.
     """
-    for i in range(len(frames)):
-        if frames[i] is None:
-            return i
-    return None  
+    for pfn in range(len(frames)):
+        if frames[pfn] is None:
+            return pfn
+    return None      # TODO
 
 
 def access_string(hit):
@@ -200,7 +209,11 @@ for addr_index, vaddr in enumerate(addr_list):
 
     # Student TODO 5: determine hit/page fault from the page table.
     pte = page_table[vpn]
-    hit = False      # TODO
+
+    if pte.present == True:
+        hit = True
+    else:
+        hit = False      # TODO
 
     victim = None
 
