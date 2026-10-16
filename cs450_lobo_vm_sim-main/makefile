@@ -4,4 +4,4 @@ clean:
 
 check:
 	mkdir -p tests/output
-	for t in tests/test-[1-7]-*.sh tests/student-test-1.sh; do sh $$t; done
+	for t in tests/test-[1-7]-*.sh tests/student-test-1.sh tests/student-test-2.sh tests/student-test-3.sh; do sh $$t; done
