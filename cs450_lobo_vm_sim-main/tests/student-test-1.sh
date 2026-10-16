@@ -34,9 +34,6 @@ $PYTHON $LOBO -s 0 -a 32 -P 8 -C 2 -p CLOCK -A 0,8,0,16,8,24,0,16,8 > $OUT 2>&1
 #
 # Expected output
 #
-# Populate EOUT with the verified output from the simulator.
-# Check the Clock hand and reference-bit behavior before finalizing.
-#
 cat > $EOUT << 'EOF'
 ARG address space size 32
 ARG page size 8
