@@ -1,0 +1,9 @@
+Description:
+------------
+Use a hit to affect LRU victim selection.
+
+Command:
+--------
+python3 ./lobo-vm-sim.py -s 0 -a 32 -P 8 -C 2 -p LRU -A 0,8,1,16
+--------
+---------
