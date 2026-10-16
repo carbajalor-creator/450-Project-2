@@ -1,0 +1,9 @@
+Description:
+------------
+Distinguish first-reference page faults from later hits, without replacement.
+
+Command:
+--------
+python3 ./lobo-vm-sim.py -s 0 -a 32 -P 8 -C 3 -p FIFO -A 0,1,8,9
+--------
+---------

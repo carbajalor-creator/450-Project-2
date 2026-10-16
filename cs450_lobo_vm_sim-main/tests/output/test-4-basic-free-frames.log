@@ -1,0 +1,9 @@
+Description:
+------------
+Fill free physical frames in order without replacement.
+
+Command:
+--------
+python3 ./lobo-vm-sim.py -s 0 -a 32 -P 8 -C 3 -p FIFO -A 0,8,16
+--------
+---------

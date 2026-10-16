@@ -1,0 +1,9 @@
+Description:
+------------
+Report a simple mixed trace with exactly three hits and two faults.
+
+Command:
+--------
+python3 ./lobo-vm-sim.py -s 0 -a 32 -P 8 -C 3 -p FIFO -A 0,1,8,9,0
+--------
+---------

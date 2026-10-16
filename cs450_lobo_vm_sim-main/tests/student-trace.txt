@@ -2,7 +2,7 @@ P2 Student-Designed Trace
 =========================
 
 Test file:
-student-test-____.sh
+student-test-3.sh
 
 Simulator invocation:
 ____________________________________________________________
@@ -11,14 +11,14 @@ Complete the table below by hand for the address trace used by this test.
 
 VA      VPN     Offset     Hit/Fault     Victim     PFN     PA
 ------  ------  ---------  ------------  ---------  ------  ------
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
+   6       0        6        PF            -          0       6                       
+   10      1        2        PF            -          1       10                    
+   6       0        6        Hit           -          0       6                   
+   10      1        2        Hit           -          1       10                   
+   18      2        2        PF            0          0       2              
+   6       0        6        PF            1          1       14              
+   6       0        6        Hit           -          1       14                   
+   10      1        2        PF            2          0       2             
 
 Notes:
 - Use "-" for Victim when no page is replaced.

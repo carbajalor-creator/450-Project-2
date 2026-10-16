@@ -1,0 +1,9 @@
+Description:
+------------
+Translate resident pages using non-zero offsets in two different PFNs.
+
+Command:
+--------
+python3 ./lobo-vm-sim.py -s 0 -a 32 -P 8 -C 2 -p FIFO -A 0,8,1,9
+--------
+---------

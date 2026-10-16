@@ -1,0 +1,9 @@
+Description:
+------------
+Perform one FIFO replacement and reuse the victim's PFN.
+
+Command:
+--------
+python3 ./lobo-vm-sim.py -s 0 -a 32 -P 8 -C 2 -p FIFO -A 0,8,16
+--------
+---------

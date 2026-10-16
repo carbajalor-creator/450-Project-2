@@ -1,0 +1,12 @@
+ARG address space size 32
+ARG page size 8
+ARG frames 2
+ARG policy FIFO
+ARG addresses 0,8,1,9
+
+VA 0x00000000 VPN    0 offset 0x0000 PAGEFAULT -> PFN   0 PA 0x00000000 Replaced:-
+VA 0x00000008 VPN    1 offset 0x0000 PAGEFAULT -> PFN   1 PA 0x00000008 Replaced:-
+VA 0x00000001 VPN    0 offset 0x0001 HIT -> PFN   0 PA 0x00000001 Replaced:-
+VA 0x00000009 VPN    1 offset 0x0001 HIT -> PFN   1 PA 0x00000009 Replaced:-
+
+FINALSTATS hits 2 faults 2 hitrate 50.00
